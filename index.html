@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AUDIOS</title>
+	<style>
+	#div1 {
+	  width: 150px;
+	  height: 80px;
+	  padding: 10px;
+	  border: 1px solid black;
+	}
+	#div2 {
+	  width: 150px;
+	  height: 80px;
+	  padding: 10px;
+	  border: 1px solid black;
+	}
+	</style>
+	<script>
+	function allowDrop(ev) {
+	  ev.preventDefault();
+	}
+
+	function drag(ev) {
+	  ev.dataTransfer.setData("text", ev.target.id);
+	}
+
+	function drop(ev) {
+	  ev.preventDefault();
+	  var data = ev.dataTransfer.getData("text");
+	  ev.target.appendChild(document.getElementById(data));
+	}
+	</script>
+</head>
+<body>
+	<img src=" images/you.jpg"  width="142" height="142"> 
+	<p>Song name: You<br> Artist: Myself</p><audio controls><source src="audio/you.mp3" type="audio/mp3"></audio><a href="pages/2nd page.html" >Play video</a><br>
+	<img src=" images/and.jpg"  width="142" height="142">
+	<p>Song name: Im alive<br> Artist:Myself</p><audio controls><source src="audio/Im Alive.mp3" type="audio/mp3"></audio><a href="pages/3rd page.html" >Play video</a><br>
+	<img src=" images/im.jpg"  width="142" height="142">
+	<p>Song name:Mine<br> Artist:Myself </p><audio controls><source src="audio/Mine.mp3"type="audio/mp3"></audio><a href="pages/4th page.html" >Play video</a><br>
+	<img src=" images/we.jpg"  width="142" height="142">
+	<p>Song name: Me<br> Artist:Myself</p><audio controls><source src="audio/me.mp3" type="audio/mp3"></audio><a href="pages/5th page.html" >Play video</a><br>
+	<img src=" images/lol.jpg"  width="142" height="142">
+	<p>Song name: My little girl<br> Artist:Myself</p><audio controls><source src="audio/My Little Girl.mp3" type="audio/mp3"></audio><a href="pages/6th page.html" >Play video</a><br>
+
+
+
+
+	<p>Drag the image into the rectangle:</p>
+
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" ></div>
+	<br>
+	<img id="drag1" src="images/facebook.jpg" draggable="true" ondragstart="drag(event)" width="100" height="70">
+
+	<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	<br>
+	<img id="drag2" src="images/insta.jpg" draggable="true" ondragstart="drag(event)" width="100" height="70">
+
+
+</body>
+</html>
